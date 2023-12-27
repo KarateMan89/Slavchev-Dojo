@@ -1,0 +1,13 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title Home Page
+    link(href='/css/style.css' rel='stylesheet')
+body
+    include ./partials/header
+    h4 Equipment
+        for equipment in result
+            li
+                a(href=`/equipment/${equipment.e_id}`) #{equipment.e_name} 
+                |  in 
+                span.room-name #{equipment.room_name}

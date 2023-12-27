@@ -1,0 +1,42 @@
+div#header
+    a(href="/") 
+        button Home
+    if (session.userRole === 'members')
+            a(href="/members/"+session.userID) 
+                button My Page
+    if (session.userRole === 'members' || session.userRole === 'admins' || session.userRole === 'trainers')
+            a(href="/classes") 
+                button Classes
+    if (session.userRole === 'admins' || session.userRole === 'trainers' )
+            a(href="/members") 
+                button Members
+    if (session.userRole === 'admins' )
+            a(href="/trainers") 
+                button Trainers
+            a(href="/equipment") 
+                button Equipment
+            a(href="/rooms") 
+                button Rooms
+
+.header_bar
+    h1 Slavchev Dojo
+    div#login_box
+        form(action="/submit", method="post")
+            #input 
+                label(for='username') Username:
+                input(type='text', id='username', name='username')
+                br
+                label(for='password') Password:
+                input(type='password', id='password', name='password')
+            #options
+                select(name="userChoice", id="userChoice")
+                    option(value="members") Member
+                    option(value="trainers") Trainer
+                    option(value="admins") Admin
+                br
+                select(name="loginChoice", id="loginChoice")
+                    option(value="login") Login
+                    option(value="register") Register
+                    option(value="logout") Logout
+                br
+            input(type="submit", value="Submit")

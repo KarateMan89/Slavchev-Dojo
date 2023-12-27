@@ -1,0 +1,12 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title Home Page
+    link(href='/css/style.css' rel='stylesheet')
+body
+    include ./partials/header
+    h4 Trainers
+    for trainer in result
+        li
+            a(href=`/trainers/${trainer.t_id}`) #{trainer.name}
+            br

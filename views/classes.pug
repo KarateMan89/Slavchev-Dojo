@@ -1,0 +1,12 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title Home Page
+    link(href='/css/style.css' rel='stylesheet')
+body
+    include ./partials/header
+    h4 Classes
+    for iClass in result
+        li
+            a(href=`/classes/${iClass.c_id}`) #{iClass.name}
+            br

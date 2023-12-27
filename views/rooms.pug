@@ -1,0 +1,15 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title Home Page
+    link(href='/css/style.css' rel='stylesheet')
+body
+    include ./partials/header
+    h4 Rooms
+    //- for room in result
+    //-     a(href=`/rooms/${room.r_id}`) #{room.name}
+    //-     br
+
+    for room in result
+        li
+            a(href=`/rooms/${room.r_id}`) #{room.name}
